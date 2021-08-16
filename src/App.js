@@ -1,26 +1,22 @@
 import React from 'react';
-import {Route, Link, HashRouter as Router} from 'react-router-dom'
-import Home from './components/home'
-import About from './components/about'
-import Us from './components/us'
-function App() {
-  return (
-    <div className="App">
-     <Router>
-       <div>
-         {/* //link 大写 */}
-       <Link to='/'>首页</Link>
-       <Link to='/about'>关于</Link>
-       <Link to='/us'>我们</Link>
-      <hr></hr>
+import { Route, HashRouter } from 'react-router-dom'
+import Header from './components/header';
 
-      <Route path='/' exact component={Home}></Route>
-      <Route path='/about' component={About}></Route>
-      <Route path='/us' component={Us}></Route>
-       </div>
-     
-     </Router>
-    </div>
+import LayOut from './components/layout';
+function App () {
+  return (
+    <HashRouter>
+      {/* // HashRouter只能有一个根节点  带#号 */}
+      {/* react 路由写在组件里 */}
+
+      <LayOut />
+
+      <Route path='/' component={Header}></Route>
+
+
+
+
+    </HashRouter >
   );
 }
 
